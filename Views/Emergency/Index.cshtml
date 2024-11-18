@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Emergency>
+@{
+    ViewData["Title"] = "ข้อมูลรับแจ้งเหตุ";
+}
+
+<br />
+<a asp-action="Create"><img src="/analysis.png" width="70" /></a>
+<hr />
+
+@if (Model.Count() > 0)
+{
+    <div class="container mt-4">
+        @foreach (var item in Model)
+        {
+            <p class="fw-bold">วันที่ : @item.Date</p>
+            <p class="fw-bold">เวลา : @item.Time</p>
+            <p class="fw-bold">รายละเอียด : @item.Description</p>
+            <p class="fw-bold">การแก้ไข : @item.Edit</p>
+            <p class="fw-bold">หมายเหตุ : @item.Other</p>
+            <p class="fw-bold">ผู้บันทึก : @item.Recorder</p>
+            <div class="d-flex gap-2">
+                <a asp-action="Edit"
+                   asp-controller="Emergency"
+                   asp-route-id="@item.Id"><img src="/edit.png" width="30" /></a>
+                <a asp-action="Delete"
+                   asp-controller="Emergency"
+                   asp-route-id="@item.Id" onclick="return confirm('คุณต้องการจะลบ @item.Date หรือไม่?')"><img src="/delete.png" width="30" /></a>
+            </div>
+            <hr />
+        }
+    </div>
+}
+else
+{
+    <div class=" alert alert-secondary">ไม่มีข้อมูลแสดง</div>
+}
+
+
+

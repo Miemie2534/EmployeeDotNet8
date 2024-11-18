@@ -1,0 +1,43 @@
+﻿@model Emergency
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>บันทึกข้อมูลรับแจ้งเหตุ</h2>
+
+<div class="p-4">
+    <form method="post" asp-action="create" asp-controller="Emergency" class="form-control p-4">
+        <div class="row">
+            <div class="mb-3 col-2">
+                <label asp-for="Date" class="form-label">วันที่</label>
+                <input asp-for="Date" type="date" class="form-control">
+                <span class=" text-danger" asp-validation-for="Date"></span>
+            </div>
+            <div class="mb-3 col-2">
+                <label asp-for="Time" class="form-label">เวลา</label>
+                <input asp-for="Time" type="time" class="form-control">
+                <span class=" text-danger" asp-validation-for="Time"></span>
+            </div>
+        </div>
+        <div class="mb-3 col-6">
+            <label asp-for="Description" class="form-label">รายละเอียด</label>
+            <textarea asp-for="Description" type="text" class="form-control"></textarea>
+            <span class=" text-danger" asp-validation-for="Description"></span>
+        </div>
+        <div class="mb-3 col-6">
+            <label asp-for="Edit" class="form-label">การแก้ไข</label>
+            <textarea asp-for="Edit" type="text" class="form-control" placeholder="กรุณากรอกข้อมูล"></textarea>
+            <span class=" text-danger" asp-validation-for="Edit"></span>
+        </div>
+        <div class="mb-3 col-2">
+            <label asp-for="Recorder" class="form-label">ผู้บันทึก</label>
+            <input asp-for="Recorder" type="text" class="form-control" placeholder="กรุณากรอกข้อมูล"></input>
+            <span class=" text-danger" asp-validation-for="Recorder"></span>
+        </div>
+        <div class="mb-3 col-6">
+            <label asp-for="Other" class="form-label">หมายเหตุ</label>
+            <textarea asp-for="Other" type="text" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

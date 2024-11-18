@@ -1,0 +1,38 @@
+﻿@model Todolist
+@{
+    ViewData["Title"] = "create";
+}
+
+<h2>Add To-Do-List</h2>
+
+<div class="p-4">
+    <form method="post" asp-action="create" asp-controller="TodoList" class="form-control p-4">
+        <div class="row">
+            <div class="mb-3 col-2">
+                <label asp-for="Date" class="form-label">วันที่</label>
+                <input asp-for="Date" type="date" class="form-control">
+                <span class=" text-danger" asp-validation-for="Date"></span>
+            </div>
+            <div class="mb-3 col-3">
+                <label asp-for="Name" class="form-label">หัวข้อ</label>
+                <input asp-for="Name" type="text" class="form-control">
+                <span class=" text-danger" asp-validation-for="Name"></span>
+            </div>
+        </div>
+            <div class="mb-3 col-6">
+                <label asp-for="Description" class="form-label">รายละเอียด</label>
+                <textarea asp-for="Description" type="text" class="form-control"></textarea>
+            <span class=" text-danger" asp-validation-for="Description"></span>
+            </div>
+            <div class="mb-3 col-2">
+                <label asp-for="Finish" class="form-label">กำหนดเสร็จ</label>
+                <input asp-for="Finish" type="text" class="form-control" placeholder="กรุณากรอกข้อมูล">
+            </div>
+        <div class="mb-3 col-6">
+            <label asp-for="Other" class="form-label">หมายเหตุ</label>
+            <textarea asp-for="Other" type="text" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+

@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Menu";
+}
+
+<div class="container mt-5 d-flex gap-5 align-items-center justify-content-center  vw-100">
+    <div class="flex-column text-center">
+        <a asp-action="Index" asp-controller="Employee"><img src="/employee.png" width="60" /></a>
+        <p>ข้อมูลพนักงาน</p>
+    </div>
+    <div class="flex-column text-center">
+        <a asp-action="Index" asp-controller="TodoList"><img src="/idea.png" width="60" /></a>
+        <p>To-Do-List</p>
+    </div>
+    <div class="flex-column text-center">
+        <a asp-action="Index" asp-controller="Emergency"><img src="/analysis.png" width="60" /></a>
+        <p>ข้อมูลรับแจ้งเหตุ</p>
+    </div>
+</div>
+
+
